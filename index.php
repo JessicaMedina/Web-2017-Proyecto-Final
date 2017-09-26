@@ -22,12 +22,36 @@ and open the template in the editor.
     <body>
         <div class="container">
             <?php require_once 'templates/ads.php'; ?>
-            <div class="ligin-form">
+            <div class="login-form">
                 <?php require_once 'templates/message.php'; ?>
                 <div class="form-header">
                     <i class="fa fa-user"></i>
                 </div>
-                <?php
-                ?>
-                </body>
-                </html>
+                <form id="login form" method="post" class="form-signin" role="form"action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                    <input name="email" id="email" type=" email" class="form-control"placeholder="Corrreo Electronico" autofocus >
+                    <input name="password" id="password" type="password" class="form-control" placeholder="Contrasena" autofocus>
+                    <button class="btn btn-block bt-login" type="submit" id="submit_btn" data-loading-text="Iniciando...">Iniciar Sesion</button>
+                </form>
+                <div class="form-footer">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <i class="fa fa-lock"></i>
+                            <a href="forget_password.php">Olvidó Su Contrasena</a>                        
+                        </div>
+
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <i class="fa fa-check"></i>
+                            <a href="register.php">Registrate</a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    <!-- /container -->
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/login.js"></script>
+</body>
+</html>
+<?php ob_end_flush(); ?>
